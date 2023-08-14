@@ -20,3 +20,4 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 /* MONGOOSE SETUP */
+console.log("hello")
