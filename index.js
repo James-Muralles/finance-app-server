@@ -5,7 +5,9 @@ import cors from "cors";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
-import kpiRoute from "./routes/kpis.js";
+import kpiRoutes from "./routes/kpi.js";
+import KPI from "./models/KPI.js";
+import {kpis} from "./data/data.js";
 // const mongoose = require('mongoose');
 
 
@@ -37,6 +39,13 @@ mongoose
     })
     .then(async() => {
         app.listen(PORT, () => console.log(`Server Port: ${PORT}`))
+
+        // drop database before seed so there is no duplicate data. Do no do this a real production app with real data.
+        
+        /* ADD DATA ONLY TIME ONLY */
+        // await mongoose.connection.db.dropDatabase();
+        // KPI.insertMany(kpis);
+
         
     })
     .catch((error) => console.log(`${error} did not connect`));
