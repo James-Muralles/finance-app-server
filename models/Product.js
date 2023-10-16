@@ -22,13 +22,10 @@ const ProductSchema = new Schema(
             ref: "Transaction",
             get: (v) => v / 100
         }], 
-    
-         monthlyData: [monthSchema],
-         dailyData: [daySchema]
     },
     { timestamps:true, toJSON: {getters: true}}
 );
 
-const KPI = mongoose.model("Product", ProductSchema)
+const Product = mongoose.model("Product", ProductSchema)
 
 export default Product;
