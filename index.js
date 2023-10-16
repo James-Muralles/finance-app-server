@@ -6,6 +6,8 @@ import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
 import kpiRoutes from "./routes/kpi.js";
+import productRoutes from "./routes/product.js";
+import Product from "./models/Prodcuct.js";
 import KPI from "./models/KPI.js";
 import {kpis} from "./data/data.js";
 // const mongoose = require('mongoose');
@@ -28,6 +30,7 @@ app.use(cors());
 /* ROUTES */
 
 app.use("/kpi", kpiRoutes);
+app.use("/product", productRoutes);
 
 /* MONGOOSE SETUP */
 console.log("hello")
