@@ -23,12 +23,10 @@ const TransactionSchema = new Schema(
             get: (v) => v / 100
         }], 
     
-         monthlyData: [monthSchema],
-         dailyData: [daySchema]
     },
     { timestamps:true, toJSON: {getters: true}}
 );
 
-const KPI = mongoose.model("Transaction", TransactionSchema)
+const Transaction = mongoose.model("Transaction", TransactionSchema)
 
 export default Transaction;
