@@ -50,10 +50,12 @@ mongoose
         
         /* ADD DATA ONLY TIME ONLY */
         // await mongoose.connection.db.dropDatabase();
-        KPI.insertMany(kpis);
-        Product.insertMany(products);
-        Transaction.insertMany(transactions);
+        // KPI.insertMany(kpis);
+        // Product.insertMany(products);
+        // Transaction.insertMany(transactions);
+        // await KPI.deleteMany({})
+        // await Product.deleteMany({})
         // await Transaction.deleteMany({})
-
+        
     })
     .catch((error) => console.log(`${error} did not connect`));
